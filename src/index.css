@@ -1,0 +1,37 @@
+body {
+  background: linear-gradient(
+    to bottom,
+    white 0%,
+    white 50%,
+    black 50%,
+    black 100%
+  );
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1::before {
+  content: attr(data-heading);
+  position: absolute;
+  color: black;
+  height: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1 {
+  position: absolute;
+  margin: 0;
+  width: auto;
+  color: white;
+  white-space: nowrap;
+  font-size: 32pt;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
