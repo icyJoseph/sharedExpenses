@@ -15,6 +15,10 @@ class Profile extends Component {
     }
   }
 
+  logout = () => {
+    return this.props.auth.logout();
+  };
+
   showName = name => (
     <div className="container" style={styles.title}>
       <h3 data-heading={name}>{name}</h3>
@@ -27,6 +31,17 @@ class Profile extends Component {
       <div style={styles.container}>
         {this.showName(profile.given_name)}
         <img src={profile.picture} alt="profile" style={styles.photo} />
+        <button
+          style={{
+            color: "#fff",
+            backgroundColor: "black",
+            borderColor: "#fff",
+            marginTop: "20px"
+          }}
+          onClick={this.logout}
+        >
+          Log out
+        </button>
       </div>
     );
   }
