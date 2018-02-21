@@ -13,6 +13,7 @@
     "react-scripts": "1.1.1"
   },
   "scripts": {
+    "deploy": "surge --domain https://mighty-measure.surge.sh",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
