@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Route, Router } from "react-router-dom";
+import { Route, Router, Redirect } from "react-router-dom";
 import App from "./App";
 import Home from "./Home/Home";
 import Callback from "./Callback/Callback";
@@ -22,7 +22,13 @@ export const Routes = () => {
         <Route
           exact
           path="/home"
-          render={props => <Home auth={auth} {...props} />}
+          render={props =>
+            !auth.isAuthenticated() ? (
+              <Redirect to="/" />
+            ) : (
+              <Home auth={auth} {...props} />
+            )
+          }
         />
         <Route
           exact
