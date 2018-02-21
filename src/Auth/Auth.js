@@ -15,6 +15,10 @@ export default class Auth {
 
   userProfile;
 
+  slowAuthentication = () => {
+    setTimeout(this.handleAuthentication, 3000);
+  };
+
   handleAuthentication = () => {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
