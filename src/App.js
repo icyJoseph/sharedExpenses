@@ -16,17 +16,9 @@ class App extends Component {
     </h1>
   );
 
-  loggedIn = msg => <h1 data-heading={msg}>{msg}</h1>;
-
   render() {
-    const { isAuthenticated } = this.props.auth;
     const msg = "Click to Login";
-    const msg2 = "Logged in";
-    return (
-      <div className="container">
-        {isAuthenticated ? this.loggedIn(msg2) : this.loginScreen(msg)}
-      </div>
-    );
+    return <div className="container">{this.loginScreen(msg)}</div>;
   }
 }
 
