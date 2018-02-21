@@ -1,6 +1,6 @@
 body {
   background: linear-gradient(
-    to bottom,
+    178deg,
     white 0%,
     white 50%,
     black 50%,
@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   flex: 1;
@@ -23,6 +24,12 @@ h1::before {
   height: 50%;
   overflow: hidden;
   text-align: center;
+  transform: translate(-10px);
+  transition: transform ease-in 1s;
+}
+
+h1:hover:before {
+  transform: translate(0px);
 }
 
 h1 {
@@ -32,6 +39,11 @@ h1 {
   color: white;
   white-space: nowrap;
   font-size: 32pt;
+  transform: rotate(-2deg);
+}
+
+h1:hover {
+  cursor: pointer;
 }
 
 .container {
