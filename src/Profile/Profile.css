@@ -9,9 +9,8 @@ h3::before {
 
 h3 {
   position: relative;
-  margin: 0;
   width: auto;
   color: white;
   white-space: nowrap;
-  font-size: 32pt;
+  font-size: 36pt;
 }

@@ -53,10 +53,11 @@ const styles = {
     borderColor: "#fff"
   },
   title: {
-    width: "100vw",
-    height: "25px",
-    position: "absolute",
-    bottom: "50%",
-    textAlign: "center"
+    textAlign: "center",
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    /* bring your own prefixes */
+    transform: "translate(-50%, -50%)"
   }
 };
