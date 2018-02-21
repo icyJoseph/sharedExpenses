@@ -52,8 +52,8 @@ export default class Auth {
     history.replace("/home");
   };
 
-  isAuthenticate = () => {
-    let expiresAt = JSON.parse(localStorage.getItem);
+  isAuthenticated = () => {
+    let expiresAt = JSON.parse(localStorage.getItem("expires_at"));
     return new Date().getTime() < expiresAt;
   };
 
