@@ -6,7 +6,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: "icjoseph.eu.auth0.com",
     /*eslint-disable-next-line*/
-    clientID: process.env.REACT_APP_CLIENT_ID,
+    clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
     redirectUri: "http://localhost:3000/callback",
     audience: "https://icjoseph.eu.auth0.com/userinfo",
     responseType: "token id_token",
