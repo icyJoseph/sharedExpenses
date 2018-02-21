@@ -10,8 +10,10 @@ export default class Auth {
     redirectUri: "http://localhost:3000/callback",
     audience: "https://icjoseph.eu.auth0.com/userinfo",
     responseType: "token id_token",
-    scope: "openid"
+    scope: "openid profile"
   });
+
+  userProfile;
 
   handleAuthentication = () => {
     this.auth0.parseHash((err, authResult) => {
@@ -49,5 +51,23 @@ export default class Auth {
   isAuthenticate = () => {
     let expiresAt = JSON.parse(localStorage.getItem);
     return new Date().getTime() < expiresAt;
+  };
+
+  getAccessToken = () => {
+    const accessToken = localStorage.getItem("access_token");
+    if (!accessToken) {
+      throw new Error("No Access Token found");
+    }
+    return accessToken;
+  };
+
+  getProfile = fn => {
+    let accessToken = this.getAccessToken();
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if (profile) {
+        this.userProfile = profile;
+      }
+      fn(err, profile);
+    });
   };
 }

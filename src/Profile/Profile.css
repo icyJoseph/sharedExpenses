@@ -1,0 +1,17 @@
+h3::before {
+  content: attr(data-heading);
+  position: absolute;
+  color: black;
+  height: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+
+h3 {
+  position: relative;
+  margin: 0;
+  width: auto;
+  color: white;
+  white-space: nowrap;
+  font-size: 32pt;
+}
