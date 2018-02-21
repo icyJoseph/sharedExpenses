@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "auth0-js": "^9.2.3",
+    "axios": "^0.18.0",
     "google-spreadsheet": "^2.0.4",
     "history": "^4.7.2",
     "prop-types": "^15.6.0",
