@@ -14,3 +14,10 @@ h3 {
   white-space: nowrap;
   font-size: 36pt;
 }
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -16,7 +16,7 @@ class Profile extends Component {
   }
 
   showName = name => (
-    <div style={styles.title}>
+    <div className="container" style={styles.title}>
       <h3 data-heading={name}>{name}</h3>
     </div>
   );
@@ -54,10 +54,7 @@ const styles = {
   },
   title: {
     textAlign: "center",
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    /* bring your own prefixes */
-    transform: "translate(-50%, -50%)"
+    position: "absolute",
+    top: 0
   }
 };
