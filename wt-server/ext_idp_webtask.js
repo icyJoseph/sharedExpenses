@@ -105,6 +105,7 @@ function getAccessToken(context, decoded, cb) {
 * Get the complete user profile with the read:user_idp_token scope
 */
 function getUserProfile(context, decoded, token, cb) {
+  // @TODO - Investigate: decode.sub should equal context.body.user_id
   const options = {
     url:
       "https://" +
