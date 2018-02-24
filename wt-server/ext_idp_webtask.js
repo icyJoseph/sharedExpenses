@@ -105,9 +105,6 @@ function getAccessToken(context, decoded, cb) {
 * Get the complete user profile with the read:user_idp_token scope
 */
 function getUserProfile(context, decoded, token, cb) {
-  console.log("token", token);
-
-  console.log("context", context);
   const options = {
     url:
       "https://" +
@@ -131,7 +128,6 @@ function getUserProfile(context, decoded, token, cb) {
 function callExtIDPApi(context, decoded, token, user, cb) {
   let idp_access_token = null;
   const api = context.body.api_url;
-  console.log("user", user);
   const provider = user.user_id.split("|")[0];
   /*
   * Checks for the identities array in the user profile
