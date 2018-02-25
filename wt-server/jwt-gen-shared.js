@@ -28,21 +28,21 @@ app.post("/", function(req, res, next) {
 });
 
 function getJWT(context, cb) {
+  const body = `{"client_id":"${context.data.CLIENT_ID}","client_secret":"${
+    context.data.CLIENT_SECRET
+  }","audience":"https://${
+    context.data.ACCOUNT_NAME
+  }/api/v2/","grant_type":"client_credentials"}`;
   const options = {
-    url: `https://${context.data.ACCOUNT_NAME}/oauth/token`,
+    url: "https://icjoseph.eu.auth0.com/oauth/token",
     headers: { "content-type": "application/json" },
-    body: `{
-          "client_id":  ${context.data.CLIENT_ID},
-          "client_secret": ${context.data.CLIENT_SECRET},
-          "audience":${context.data.ACCOUNT_NAME}/api/v2/",
-          "grant_type":"client_credentials"
-    }`
+    body
   };
 
   return request.post(options, function(err, response, body) {
     if (err) return cb(err);
     else {
-      return cb(null, context, body);
+      return cb(null, body);
     }
   });
 }
