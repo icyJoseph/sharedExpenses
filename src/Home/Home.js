@@ -12,7 +12,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    const loading = setTimeout(this.getData, 1000);
+    const loading = setTimeout(this.getData, 500);
     return loading;
   }
 
