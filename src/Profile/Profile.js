@@ -36,7 +36,10 @@ class Profile extends Component {
             color: "#fff",
             backgroundColor: "black",
             borderColor: "#fff",
-            marginTop: "20px"
+            marginTop: "20px",
+            width: 150,
+            height: 40,
+            borderRadius: 10
           }}
           onClick={this.logout}
         >

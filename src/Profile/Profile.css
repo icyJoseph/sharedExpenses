@@ -14,6 +14,7 @@ h3 {
   white-space: nowrap;
   font-size: 36pt;
   transform: rotate(-2deg);
+  visibility: visible;
 }
 
 .container {
@@ -21,4 +22,5 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
 }
