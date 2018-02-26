@@ -6,6 +6,7 @@ import Home from "./Home/Home";
 import Callback from "./Callback/Callback";
 import Auth from "./Auth/Auth";
 import history from "./history";
+import Detail from "./Table/Detail";
 
 const auth = new Auth();
 
@@ -19,6 +20,17 @@ export const Routes = () => {
   return (
     <Router history={history} component={App}>
       <div>
+        <Route
+          exact
+          path="/home/:id"
+          render={props =>
+            !auth.isAuthenticated() ? (
+              <Redirect to="/" />
+            ) : (
+              <Detail auth={auth} {...props} />
+            )
+          }
+        />
         <Route
           exact
           path="/home"
