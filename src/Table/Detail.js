@@ -27,7 +27,9 @@ class Detail extends Component {
     const { item } = this.state;
     return (
       <Fragment>
-        <div style={{ margin: "10% auto", textAlign: "justify", width: "70%" }}>
+        <div
+          style={{ margin: "50px auto", textAlign: "justify", width: "70%" }}
+        >
           <h4>{capitalizer(item.title)}</h4>
           <p>{capitalizer(item.description)}</p>
           <p>{item.amount}</p>
@@ -39,7 +41,7 @@ class Detail extends Component {
         <div
           style={{
             width: "70%",
-            margin: "15% auto auto auto",
+            margin: "100px auto 5px auto",
             textAlign: "center"
           }}
         >
@@ -62,7 +64,7 @@ class Detail extends Component {
               color: "#fff",
               backgroundColor: "black",
               borderColor: "#fff",
-              margin: "20px",
+              margin: "5px",
               width: 150,
               height: 40,
               borderRadius: 10
@@ -72,13 +74,13 @@ class Detail extends Component {
             Edit
           </button>
         </div>
-        <div style={{ width: "70%", margin: "5% auto", textAlign: "center" }}>
+        <div style={{ width: "70%", margin: "30px auto", textAlign: "center" }}>
           <button
             style={{
               color: "#fff",
               backgroundColor: "black",
               borderColor: "#fff",
-              margin: "20px",
+              margin: "5px auto",
               width: 150,
               height: 40,
               borderRadius: 10
