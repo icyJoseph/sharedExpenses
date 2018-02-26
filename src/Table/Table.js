@@ -27,7 +27,7 @@ class Table extends Component {
       <Fragment>
         <div style={{ margin: 10 }}>Yay! We have data!</div>
         <div
-          style={{ overflow: "auto", maxHeight: 200, width: "70%", margin: 5 }}
+          style={{ overflow: "auto", maxHeight: 175, width: "70%", margin: 5 }}
         >
           <ReactList
             itemRenderer={this.renderItem}

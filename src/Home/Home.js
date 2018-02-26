@@ -40,7 +40,7 @@ class Home extends Component {
             <Spinner
               name="ball-pulse-rise"
               color="black"
-              style={{ margin: "15% auto" }}
+              style={{ margin: "130px auto" }}
             />
           ) : (
             <Table data={data} />
@@ -77,14 +77,14 @@ const styles = {
   content: {
     display: "flex",
     flexDirection: "column",
-    flex: 4,
+    flex: 5,
     alignItems: "center",
     justifyContent: "flex-start"
   },
   profile: {
     display: "flex",
     flexDirection: "column",
-    flex: 4,
+    flex: 5,
     alignItems: "center",
     justifyContent: "center"
   }
