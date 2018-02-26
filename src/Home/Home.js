@@ -17,10 +17,14 @@ class Home extends Component {
   }
 
   getData = () => {
-    const { auth: { userProfile: { sub } } } = this.props;
     api
-      .columns({ user_id: sub })
-      .then(res => this.setState({ data: res.values, spinner: false }));
+      .rows()
+      .then(res => this.setState({ data: res, spinner: false }))
+      .then(this.saveToLocalStorage);
+  };
+
+  saveToLocalStorage = () => {
+    localStorage.setItem("sheetData", JSON.stringify(this.state.data));
   };
 
   render() {
@@ -33,12 +37,18 @@ class Home extends Component {
         </div>
         <div style={styles.content}>
           {spinner ? (
-            <Spinner name="ball-pulse-rise" color="black" />
+            <Spinner
+              name="ball-pulse-rise"
+              color="black"
+              style={{ margin: "15% auto" }}
+            />
           ) : (
             <Table data={data} />
           )}
         </div>
-        <Profile auth={auth} style={styles.profile} />
+        <div style={styles.profile}>
+          <Profile auth={auth} />
+        </div>
       </div>
     );
   }
@@ -64,18 +74,18 @@ const styles = {
     alignItems: "center",
     justifyContent: "flex-start"
   },
-  profile: {
-    display: "flex",
-    flexDirection: "column",
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-  },
   content: {
     display: "flex",
     flexDirection: "column",
-    flex: 2,
+    flex: 4,
     alignItems: "center",
     justifyContent: "flex-start"
+  },
+  profile: {
+    display: "flex",
+    flexDirection: "column",
+    flex: 4,
+    alignItems: "center",
+    justifyContent: "center"
   }
 };
