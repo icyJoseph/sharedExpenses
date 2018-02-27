@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { capitalizer } from "./Utils";
 
@@ -26,9 +26,20 @@ class Detail extends Component {
   render() {
     const { item } = this.state;
     return (
-      <Fragment>
+      <div
+        style={{
+          display: "flex",
+          flex: 1,
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
         <div
-          style={{ margin: "50px auto", textAlign: "justify", width: "70%" }}
+          style={{
+            textAlign: "justify",
+            width: "80%"
+          }}
         >
           <h4>{capitalizer(item.title)}</h4>
           <p>{capitalizer(item.description)}</p>
@@ -40,57 +51,68 @@ class Detail extends Component {
         </div>
         <div
           style={{
+            display: "flex",
+            flex: 1,
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
             width: "70%",
-            margin: "100px auto 5px auto",
-            textAlign: "center"
+            marginTop: "75px"
           }}
         >
-          <button
+          <a
             style={{
               color: "#fff",
               backgroundColor: "black",
               borderColor: "#fff",
-              margin: "20px",
+              marginTop: "20px",
               width: 150,
-              height: 40,
-              borderRadius: 10
+              height: 60,
+              borderRadius: 10,
+              borderStyle: "solid",
+              textAlign: "center",
+              cursor: "pointer"
             }}
             onClick={() => 1}
           >
-            Paid
-          </button>
-          <button
+            <p style={{ fontSize: "14pt" }}>Paid</p>
+          </a>
+          <a
             style={{
               color: "#fff",
               backgroundColor: "black",
               borderColor: "#fff",
-              margin: "5px",
+              marginTop: "20px",
               width: 150,
-              height: 40,
-              borderRadius: 10
+              height: 60,
+              borderRadius: 10,
+              borderStyle: "solid",
+              textAlign: "center",
+              cursor: "pointer"
             }}
             onClick={() => 1}
           >
-            Edit
-          </button>
-        </div>
-        <div style={{ width: "70%", margin: "30px auto", textAlign: "center" }}>
-          <button
+            <p style={{ fontSize: "14pt" }}>Edit</p>
+          </a>
+          <a
             style={{
               color: "#fff",
               backgroundColor: "black",
               borderColor: "#fff",
-              margin: "5px auto",
+              marginTop: "20px",
               width: 150,
-              height: 40,
-              borderRadius: 10
+              height: 60,
+              borderRadius: 10,
+              borderStyle: "solid",
+              textAlign: "center",
+              cursor: "pointer"
             }}
             onClick={() => this.props.history.goBack()}
           >
-            Back
-          </button>
+            <p style={{ fontSize: "14pt" }}>Back</p>
+          </a>
         </div>
-      </Fragment>
+      </div>
     );
   }
 }

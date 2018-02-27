@@ -31,20 +31,23 @@ class Profile extends Component {
       <div style={styles.container}>
         {this.showName(profile.given_name)}
         <img src={profile.picture} alt="profile" style={styles.photo} />
-        <button
+        <a
           style={{
             color: "#fff",
             backgroundColor: "black",
             borderColor: "#fff",
             marginTop: "20px",
             width: 150,
-            height: 40,
-            borderRadius: 10
+            height: 60,
+            borderRadius: 10,
+            borderStyle: "solid",
+            textAlign: "center",
+            cursor: "pointer"
           }}
           onClick={this.logout}
         >
-          Log out
-        </button>
+          <p style={{ fontSize: "14pt" }}>Log out</p>
+        </a>
       </div>
     );
   }
@@ -65,8 +68,8 @@ const styles = {
     justifyContent: "center"
   },
   photo: {
-    width: 150,
-    height: 150,
+    width: 100,
+    height: 100,
     borderRadius: "25%",
     borderColor: "#fff"
   },
