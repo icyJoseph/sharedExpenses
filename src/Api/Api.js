@@ -15,3 +15,18 @@ export const rows = token => {
     )
     .then(res => res.data);
 };
+
+export const addRow = (token, row) => {
+  return axios
+    .post(
+      `${apiEndPoint}/addRow`,
+      { row },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        }
+      }
+    )
+    .then(res => res.data);
+};
