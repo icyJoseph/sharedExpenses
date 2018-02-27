@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Spinner from "react-spinkit";
 import Profile from "../Profile/Profile";
 import Table from "../Table/Table";
-import * as api from "../Api/Api";
+import { rows } from "../Api/Api";
 
 class Home extends Component {
   state = {
@@ -12,13 +12,13 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    const loading = setTimeout(this.getData, 500);
+    const loading = setTimeout(() => this.getData(), 500);
     return loading;
   }
 
   getData = () => {
-    api
-      .rows()
+    return Promise.resolve(localStorage.getItem("access_token"))
+      .then(res => rows(res))
       .then(res => this.setState({ data: res, spinner: false }))
       .then(this.saveToLocalStorage);
   };
