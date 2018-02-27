@@ -13,7 +13,5 @@ export const rows = token => {
         }
       }
     )
-    .then(res => {
-      return res.data;
-    });
+    .then(res => res.data);
 };
