@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import { capitalizer } from "./Utils";
 
 const Row = ({ data, index }) => {
   const even = index % 2 === 0;
@@ -19,16 +20,14 @@ const Row = ({ data, index }) => {
       to={`/home/${data.id}`}
       style={{ height: 60, width: "100%", verticalAlign: "middle", ...style }}
     >
-      <span
-        style={{ width: "33.33%", position: "absolute", textAlign: "center" }}
-      >
+      <span style={{ width: "25%", position: "absolute", textAlign: "center" }}>
         {data.owner}
       </span>
       <span
         style={{
-          width: "33.33%",
+          width: "25%",
           position: "absolute",
-          marginLeft: "33.33%",
+          marginLeft: "25%",
           textAlign: "center"
         }}
       >
@@ -36,13 +35,23 @@ const Row = ({ data, index }) => {
       </span>
       <span
         style={{
-          width: "33.33%",
+          width: "25%",
           position: "absolute",
-          marginLeft: "66.66%",
+          marginLeft: "50%",
           textAlign: "center"
         }}
       >
         {data.amount} {data.currency}
+      </span>
+      <span
+        style={{
+          width: "25%",
+          position: "absolute",
+          marginLeft: "75%",
+          textAlign: "center"
+        }}
+      >
+        {capitalizer(data.status)}
       </span>
     </NavLink>
   );
