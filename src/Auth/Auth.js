@@ -8,9 +8,9 @@ export default class Auth {
     /*eslint-disable-next-line*/
     clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
     redirectUri: "http://localhost:3000/callback",
-    audience: "https://icjoseph.eu.auth0.com/userinfo",
+    audience: process.env.REACT_APP_WEB_TASK_GOOGLE_SPREADSHEET,
     responseType: "token id_token",
-    scope: "openid profile"
+    scope: "openid profile read:write:sheet"
   });
 
   userProfile;
