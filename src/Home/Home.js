@@ -49,6 +49,32 @@ class Home extends Component {
         <div style={styles.profile}>
           <Profile auth={auth} />
         </div>
+        <div
+          style={{
+            display: "flex",
+            flex: 1,
+            flexDirection: "column",
+            alignItems: "flex-end"
+          }}
+        >
+          <a
+            style={{
+              color: "#fff",
+              backgroundColor: "#10d30d",
+              borderColor: "#fff",
+              marginRight: "20px",
+              marginTop: "-30px",
+              width: 40,
+              height: 40,
+              borderRadius: "50%",
+              borderStyle: "solid",
+              textAlign: "center",
+              cursor: "pointer"
+            }}
+          >
+            <span style={{ fontSize: "25pt" }}>+</span>
+          </a>
+        </div>
       </div>
     );
   }
