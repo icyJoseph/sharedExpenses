@@ -1,14 +1,15 @@
 import axios from "axios";
 
-export const rows = () => {
-  const apiEndPoint = process.env.REACT_APP_WEB_TASK_GOOGLE_SPREADSHEET;
+const apiEndPoint = process.env.REACT_APP_WEB_TASK_GOOGLE_SPREADSHEET;
+export const rows = token => {
   return axios
     .post(
       apiEndPoint,
       {},
       {
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
         }
       }
     )
