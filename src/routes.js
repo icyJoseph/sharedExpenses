@@ -1,12 +1,12 @@
 import React from "react";
 
 import { Route, Router, Redirect } from "react-router-dom";
-import App from "./App";
-import Home from "./Home/Home";
-import Callback from "./Callback/Callback";
-import Auth from "./Auth/Auth";
+import App from "./Components/App";
+import Home from "./Components/Home/Home";
+import Callback from "./Components/Callback/Callback";
+import Auth from "./Auth";
 import history from "./history";
-import Detail from "./Table/Detail";
+import Detail from "./Components/Table/Detail";
 
 const auth = new Auth();
 
