@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Button from "../Commons/Button";
 import { capitalizer } from "./Utils";
 
 class Detail extends Component {
@@ -60,57 +61,9 @@ class Detail extends Component {
             marginTop: "75px"
           }}
         >
-          <a
-            style={{
-              color: "#fff",
-              backgroundColor: "black",
-              borderColor: "#fff",
-              marginTop: "20px",
-              width: 150,
-              height: 60,
-              borderRadius: 10,
-              borderStyle: "solid",
-              textAlign: "center",
-              cursor: "pointer"
-            }}
-            onClick={() => 1}
-          >
-            <p style={{ fontSize: "14pt" }}>Paid</p>
-          </a>
-          <a
-            style={{
-              color: "#fff",
-              backgroundColor: "black",
-              borderColor: "#fff",
-              marginTop: "20px",
-              width: 150,
-              height: 60,
-              borderRadius: 10,
-              borderStyle: "solid",
-              textAlign: "center",
-              cursor: "pointer"
-            }}
-            onClick={() => 1}
-          >
-            <p style={{ fontSize: "14pt" }}>Edit</p>
-          </a>
-          <a
-            style={{
-              color: "#fff",
-              backgroundColor: "black",
-              borderColor: "#fff",
-              marginTop: "20px",
-              width: 150,
-              height: 60,
-              borderRadius: 10,
-              borderStyle: "solid",
-              textAlign: "center",
-              cursor: "pointer"
-            }}
-            onClick={() => this.props.history.goBack()}
-          >
-            <p style={{ fontSize: "14pt" }}>Back</p>
-          </a>
+          <Button label="Paid" callback={() => 1} />
+          <Button label="Edit" callback={() => 1} />
+          <Button label="Back" callback={() => this.props.history.goBack()} />
         </div>
       </div>
     );

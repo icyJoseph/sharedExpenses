@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Spinner from "react-spinkit";
 import Profile from "../Profile/Profile";
 import Table from "../Table/Table";
+import RoundButton from "../Commons/RoundButton";
 import { rows } from "../../Api";
 
 class Home extends Component {
@@ -57,25 +58,7 @@ class Home extends Component {
             alignItems: "flex-end"
           }}
         >
-          <a
-            style={{
-              color: "#fff",
-              backgroundColor: "#10d30d",
-              borderColor: "#fff",
-              marginRight: "20px",
-              marginTop: "-30px",
-              width: 60,
-              height: 60,
-              borderRadius: "50%",
-              cursor: "pointer",
-              fontSize: "40pt",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            +
-          </a>
+          <RoundButton label="+" callback={() => 1} />
         </div>
       </div>
     );

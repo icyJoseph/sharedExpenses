@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Button from "../Commons/Button";
 import "./Profile.css";
 
 class Profile extends Component {
@@ -31,23 +32,7 @@ class Profile extends Component {
       <div style={styles.container}>
         {this.showName(profile.given_name)}
         <img src={profile.picture} alt="profile" style={styles.photo} />
-        <a
-          style={{
-            color: "#fff",
-            backgroundColor: "black",
-            borderColor: "#fff",
-            marginTop: "20px",
-            width: 150,
-            height: 60,
-            borderRadius: 10,
-            borderStyle: "solid",
-            textAlign: "center",
-            cursor: "pointer"
-          }}
-          onClick={this.logout}
-        >
-          <p style={{ fontSize: "14pt" }}>Log out</p>
-        </a>
+        <Button label="Log out" callback={this.logout} />
       </div>
     );
   }
