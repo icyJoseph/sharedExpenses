@@ -25,9 +25,17 @@ class Table extends Component {
     const { data } = this.state;
     return (
       <Fragment>
-        <div style={{ margin: 10 }}>Yay! We have data!</div>
+        <div style={{ flex: 1, flexDirection: "column", margin: 10 }}>
+          Yay! We have data!
+        </div>
         <div
-          style={{ overflow: "auto", maxHeight: 175, width: "90%", margin: 5 }}
+          style={{
+            overflow: "auto",
+            width: "90%",
+            marginBottom: 25,
+            flex: 8,
+            flexDirection: "column"
+          }}
         >
           <ReactList
             itemRenderer={this.renderItem}
