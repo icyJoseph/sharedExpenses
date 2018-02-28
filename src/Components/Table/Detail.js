@@ -38,6 +38,9 @@ class Detail extends Component {
       >
         <div
           style={{
+            display: "flex",
+            flex: 1,
+            flexDirection: "column",
             textAlign: "justify",
             width: "80%"
           }}
@@ -61,7 +64,6 @@ class Detail extends Component {
             marginTop: "75px"
           }}
         >
-          <Button label="Paid" callback={() => 1} />
           <Button label="Edit" callback={() => 1} />
           <Button label="Back" callback={() => this.props.history.goBack()} />
         </div>
