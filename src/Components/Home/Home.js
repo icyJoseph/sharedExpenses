@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Spinner from "react-spinkit";
 import Profile from "../Profile/Profile";
 import Table from "../Table/Table";
-import { rows } from "../Api/Api";
+import { rows } from "../../Api";
 
 class Home extends Component {
   state = {
@@ -64,15 +64,17 @@ class Home extends Component {
               borderColor: "#fff",
               marginRight: "20px",
               marginTop: "-30px",
-              width: 40,
-              height: 40,
+              width: 60,
+              height: 60,
               borderRadius: "50%",
-              borderStyle: "solid",
-              textAlign: "center",
-              cursor: "pointer"
+              cursor: "pointer",
+              fontSize: "40pt",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
             }}
           >
-            <span style={{ fontSize: "25pt" }}>+</span>
+            +
           </a>
         </div>
       </div>
