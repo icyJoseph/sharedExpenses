@@ -27,5 +27,5 @@ export default RoundButton;
 
 RoundButton.propTypes = {
   label: PropTypes.string,
-  callback: PropTypes.function
+  callback: PropTypes.func
 };

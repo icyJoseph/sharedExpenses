@@ -31,6 +31,6 @@ export default Button;
 
 Button.propTypes = {
   label: PropTypes.string,
-  callback: PropTypes.function,
+  callback: PropTypes.func,
   style: PropTypes.object
 };
