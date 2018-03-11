@@ -17,7 +17,7 @@ const Row = ({ data, index }) => {
 
   return (
     <NavLink
-      to={`/home/${data.id}`}
+      to={`/detail/${data.id}`}
       style={{ height: 60, width: "100%", verticalAlign: "middle", ...style }}
     >
       <span style={{ width: "25%", position: "absolute", textAlign: "center" }}>
