@@ -35,7 +35,7 @@ export const Routes = () => {
         />
         <Route
           exact
-          path="/home/:id"
+          path="/detail/:id"
           render={props => compose(auth, props, Detail)}
         />
         <Route
