@@ -8,7 +8,7 @@ const RoundButton = ({ label, callback }) => {
       label={label}
       style={{
         color: "#fff",
-        backgroundColor: "#10d30d",
+        backgroundColor: "#0cd32a",
         borderColor: "#fff",
         marginRight: "20px",
         marginTop: "-30px",
