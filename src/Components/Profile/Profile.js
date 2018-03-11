@@ -19,15 +19,21 @@ class Profile extends Component {
       getProfile((err, profile) => {
         this.setState({ profile });
         this.saveProfileToStorage();
-        this.fetchUserMetaData(profile.sub).then(metadata =>
-          this.setState({ metadata })
-        );
+        this.fetchUserMetaData(profile.sub)
+          .then(metadata => {
+            this.setState({ metadata });
+            return metadata;
+          })
+          .then(metadata => this.saveMetadataToStorage(metadata));
       });
     } else {
       this.setState({ profile: userProfile });
-      this.fetchUserMetaData(userProfile.sub).then(metadata =>
-        this.setState({ metadata })
-      );
+      this.fetchUserMetaData(userProfile.sub)
+        .then(metadata => {
+          this.setState({ metadata });
+          return metadata;
+        })
+        .then(metadata => this.saveMetadataToStorage(metadata));
     }
   }
 
@@ -37,6 +43,10 @@ class Profile extends Component {
 
   saveProfileToStorage = () => {
     localStorage.setItem("user_profile", JSON.stringify(this.state.profile));
+  };
+
+  saveMetadataToStorage = metadata => {
+    localStorage.setItem("meta_data", JSON.stringify(metadata));
   };
 
   logout = () => {

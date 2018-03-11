@@ -26,14 +26,14 @@ class Add extends Component {
   };
 
   postToSheet = () => {
-    const userProfile = JSON.parse(localStorage.getItem("user_profile"));
     // TODO, consider userProfile is undefined
     const token = localStorage.getItem("access_token");
+    const metaData = JSON.parse(localStorage.getItem("meta_data"));
     const row = {
       ...this.state,
       _id: uuid(),
       logDate: new Date().toLocaleString().split(",")[0],
-      owner: userProfile.nickname,
+      owner: metaData.given_name,
       status: "unpaid",
       currency: "SEK"
     };
