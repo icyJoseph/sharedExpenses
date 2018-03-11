@@ -2,14 +2,19 @@ import React, { Component, Fragment } from "react";
 import ReactList from "react-list";
 import PropTypes from "prop-types";
 import Row from "./Row";
+import Debt from "./Debt";
+import { debtCalculator } from "./Utils";
 
 class Table extends Component {
   state = {
-    data: []
+    data: [],
+    total: 0,
+    individual: []
   };
 
   componentDidMount() {
-    this.setState({ data: this.props.data });
+    const { individual, total } = debtCalculator(this.props.data);
+    this.setState({ data: this.props.data, total, individual });
   }
 
   renderItem = (index, key) => (
@@ -22,11 +27,11 @@ class Table extends Component {
   );
 
   render() {
-    const { data } = this.state;
+    const { data, individual, total } = this.state;
     return (
       <Fragment>
         <div style={{ flex: 1, flexDirection: "column", margin: 10 }}>
-          Yay! We have data!
+          <Debt individual={individual} total={total} />
         </div>
         <div
           style={{
