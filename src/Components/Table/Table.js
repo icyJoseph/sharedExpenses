@@ -32,7 +32,7 @@ class Table extends Component {
           style={{
             overflow: "auto",
             width: "90%",
-            marginBottom: 25,
+            marginBottom: "50px",
             flex: 8,
             flexDirection: "column"
           }}
