@@ -50,7 +50,6 @@ class Detail extends Component {
           <p>{item.amount}</p>
           <p>Owned by: {item.owner}</p>
           <p>Saved the: {item.logdate}</p>
-          <p>Receipt from the: {item.date}</p>
           <p>Status: {item.status}</p>
         </div>
         <div
