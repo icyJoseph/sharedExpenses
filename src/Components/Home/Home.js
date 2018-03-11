@@ -13,7 +13,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    const loading = setTimeout(() => this.getData(), 500);
+    const loading = setTimeout(() => this.getData(), 300);
     return loading;
   }
 
@@ -58,7 +58,12 @@ class Home extends Component {
             alignItems: "flex-end"
           }}
         >
-          <RoundButton label="+" callback={() => 1} />
+          {!spinner && (
+            <RoundButton
+              label="+"
+              callback={() => this.props.history.push("/home/add")}
+            />
+          )}
         </div>
       </div>
     );
@@ -68,7 +73,8 @@ class Home extends Component {
 export default Home;
 
 Home.propTypes = {
-  auth: PropTypes.object
+  auth: PropTypes.object,
+  history: PropTypes.object
 };
 
 const styles = {
@@ -96,7 +102,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     flex: 5,
-    alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    alignItems: "center"
   }
 };
