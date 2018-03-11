@@ -5,6 +5,7 @@ h3::before {
   height: 50%;
   overflow: hidden;
   text-align: center;
+  visibility: visible;
 }
 
 h3 {

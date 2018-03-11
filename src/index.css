@@ -11,7 +11,6 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -49,6 +48,7 @@ h1:hover {
 
 .container {
   height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
