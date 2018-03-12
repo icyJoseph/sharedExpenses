@@ -63,7 +63,7 @@ class Profile extends Component {
     const { profile, metadata } = this.state;
     return (
       <Fragment>
-        {this.showName(metadata.given_name)}
+        {this.showName(metadata ? metadata.given_name : "unknown")}
         <div style={styles.container}>
           <img src={profile.picture} alt="profile" style={styles.picture} />
           <Button label="Log out" callback={this.logout} />
