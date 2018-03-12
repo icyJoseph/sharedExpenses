@@ -5,7 +5,6 @@ import history from "../history";
 export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: "icjoseph.eu.auth0.com",
-    /*eslint-disable-next-line*/
     clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
     redirectUri: "http://localhost:3000/callback",
     audience: process.env.REACT_APP_WEB_TASK_GOOGLE_SPREADSHEET,
