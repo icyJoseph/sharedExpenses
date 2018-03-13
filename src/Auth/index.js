@@ -15,7 +15,7 @@ export default class Auth {
   userProfile;
 
   slowAuthentication = () => {
-    setTimeout(this.handleAuthentication, 0);
+    setTimeout(this.handleAuthentication, 300);
   };
 
   handleAuthentication = () => {
